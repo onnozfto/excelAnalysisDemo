@@ -7,7 +7,6 @@ import com.example.demo.excel.model.CellInfo;
 import com.example.demo.excel.model.StyleInfo;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
@@ -51,10 +50,7 @@ public class ExcelToHTML {
   public static String readExcelToHtml(HttpServletResponse response, byte[] fileContent,
       boolean isWithStyle, List<JSONObject> datas, JSONObject paramObject) {
 
-    InputStream is = null;
-
-    FileOutputStream out = null;
-
+    InputStream is;
     String msg = null;
 
     Workbook wb = null;
